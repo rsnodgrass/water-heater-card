@@ -4,7 +4,7 @@
   "description": "Water Heater card for Home Assistant's Lovelace",
   "main": "src/index.js",
   "repository": "git@github.com:rsnodgrass/water-heater-card.git",
-  "author": "",
+  "author": "Ryan Snodgrass",
   "license": "MIT",
   "dependencies": {
     "debounce-fn": "^4.0.0",
