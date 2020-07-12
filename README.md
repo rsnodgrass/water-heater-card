@@ -1,16 +1,12 @@
-# Lovelace Water Heater Card
+# Water Heater Card for Lovelace
 
 # THIS DOES NOT WORK!!!!  PROOF OF CONCEPT
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
 
-A water heater control card for Home Assistant's Lovelace UI, based on the [simple-thermostat card](https://github.com/nervetattoo/simple-thermostat/).
+A water heater card for Home Assistant's Lovelace UI, directly based on the [simple-thermostat](https://github.com/nervetattoo/simple-thermostat/) card.
 
-## Compact mode
-
-![Compact configuration](https://github.com/nervetattoo/simple-thermostat/raw/master/simple-thermostat-compact.png)
-
-Example:
+## Example
 
 ```yaml
 type: custom:simple-thermostat
