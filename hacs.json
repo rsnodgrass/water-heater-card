@@ -1,0 +1,5 @@
+{
+  "name": "Water Heater Card",
+  "homeassistant": "0.81.0",
+  "render_readme": true
+}

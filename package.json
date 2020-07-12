@@ -1,0 +1,77 @@
+{
+  "name": "water-heater-card",
+  "version": "0.0.1",
+  "description": "Water Heater card for Home Assistant's Lovelace",
+  "main": "src/index.js",
+  "repository": "git@github.com:rsnodgrass/water-heater-card.git",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "debounce-fn": "^4.0.0",
+    "lit-element": "^2.3.1",
+    "lodash.isequal": "^4.5.0"
+  },
+  "devDependencies": {
+    "@ava/babel": "^1.0.1",
+    "@babel/core": "^7.10.3",
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "ava": "^3.9.0",
+    "husky": "^4.2.5",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^2.0.1",
+    "release-it": "^12.3.5",
+    "rollup": "^2.18.0",
+    "rollup-plugin-filesize": "^9.0.1",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-minify-html-literals": "^1.2.4",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^3.1.2",
+    "rollup-plugin-postcss-lit": "^0.2.2",
+    "rollup-plugin-terser": "^6.1.0",
+    "tracker-json": "^1.2.0"
+  },
+  "scripts": {
+    "release": "release-it",
+    "test": "ava",
+    "build": "NODE_ENV=production rollup -c",
+    "dist": "yarn build && cp water-heater-card.js $HA_MOUNT/www/water-heater-card.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "tracker-json": {
+    "water-heater-card": {
+      "repo": "rsnodgrass/water-heater-card",
+      "file": "water-heater-card.js",
+      "resolve": "gh:release"
+    }
+  },
+  "release-it": {
+    "github": {
+      "release": true,
+      "assets": [
+        "water-heater-card.*"
+      ]
+    },
+    "scripts": {
+      "afterBump": "npx tracker-json",
+      "beforeStart": "yarn build",
+      "afterRelease": "rm water-heater-card.js"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "ava": {
+    "babel": {
+      "compileAsTests": [
+        "src/**/*"
+      ]
+    }
+  }
+}
