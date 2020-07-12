@@ -29,7 +29,7 @@ const UPDATE_PROPS = [
 //const MODE_TYPES = ['hvac', 'preset']
 const MODE_TYPES = []
 
-// Sorted list of water heater modes
+// Sorted list of water heater modes (see also attibute.operation_list)
 const WATER_HEATER_MODES = [
   'off',
   'eco',
@@ -342,7 +342,7 @@ class WaterHeaterCard extends LitElement {
       `
     }
 
-    // note: water_heater doesn't have a current_temperature attribute, so map temperature (setting) to current
+    // NOTE: water_heater doesn't have a current_temperature attribute, so map temperature (setting) to current
     const {
       state,
       attributes: {
