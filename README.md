@@ -5,6 +5,8 @@
 
 A water heater card for Home Assistant's Lovelace UI, directly based on the [simple-thermostat](https://github.com/nervetattoo/simple-thermostat/) card.
 
+![Example water heater card](https://github.com/rsnodgrass/water-heater-card/raw/master/example-card.png)
+
 #### Not Implemented
 
 This is a community developed Lovelace card, if you want features please implement them and submit a Pull Request.
@@ -15,8 +17,9 @@ This is a community developed Lovelace card, if you want features please impleme
 ## Example Card
 
 ```yaml
-type: custom:simple-thermostat
-entity: water_heater.rheem_80g_heat_pump
+entity: water_heater.water_heater
+type: 'custom:simple-thermostat'
+step_layout: row
 ```
 
 ## Installation
