@@ -27,18 +27,18 @@ const UPDATE_PROPS = [
 ]
 
 //const MODE_TYPES = ['hvac', 'preset']
-const MODE_TYPES = [ ]
+const MODE_TYPES = []
 
 // Sorted list of water heater modes
 const WATER_HEATER_MODES = [
-    'off',
-    'eco',
-    'electric',
-    'gas',
-    'performance',
-    'high_demand',
-    'heat_pump',
-    'gas'
+  'off',
+  'eco',
+  'electric',
+  'gas',
+  'performance',
+  'high_demand',
+  'heat_pump',
+  'gas',
 ]
 
 const DEFAULT_CONTROL = ['hvac', 'preset']
@@ -53,7 +53,7 @@ const ICONS = {
 const modeIcons = {
   off: 'hass:power',
   auto: 'hass:autorenew',
-  heat: 'hass:fire'
+  heat: 'hass:fire',
 }
 
 const STATE_ICONS = {
@@ -342,13 +342,14 @@ class WaterHeaterCard extends LitElement {
       `
     }
 
+    // note: water_heater doesn't have a current_temperature attribute, so map temperature (setting) to current
     const {
       state,
       attributes: {
         min_temp: minTemp = null,
         max_temp: maxTemp = null,
         hvac_action: action,
-        current_temperature: current,
+        temperature: current,
         ...attributes
       },
     } = entity
