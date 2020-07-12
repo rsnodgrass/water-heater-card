@@ -1,5 +1,6 @@
 {
-  "name": "Water Heater Card",
-  "homeassistant": "0.81.0",
-  "render_readme": true
+    "name": "Water Heater Card",
+    "render_readme": true,
+    "content_in_root": false,
+    "homeassistant": "0.81.0"
 }
