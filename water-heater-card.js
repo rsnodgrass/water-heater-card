@@ -544,10 +544,10 @@
       }
       return r.stringsArray.set(e.strings, o), o
     },
-    I = ['html', 'svg'],
-    F = new Set(),
+    F = ['html', 'svg'],
+    I = new Set(),
     B = (t, e, n) => {
-      F.add(t)
+      I.add(t)
       const i = n ? n.element : document.createElement('template'),
         r = e.querySelectorAll('style'),
         { length: s } = r
@@ -558,7 +558,7 @@
         e.parentNode.removeChild(e), (o.textContent += e.textContent)
       }
       ;(t => {
-        I.forEach(e => {
+        F.forEach(e => {
           const n = C.get(U(e, t))
           void 0 !== n &&
             n.keyString.forEach(t => {
@@ -980,7 +980,7 @@
       const r = i.scopeName,
         s = $.has(n),
         o = M && 11 === n.nodeType && !!n.host,
-        a = o && !F.has(r),
+        a = o && !I.has(r),
         c = a ? document.createDocumentFragment() : n
       if (
         (((t, n, i) => {
@@ -1186,8 +1186,8 @@
       U = A.propertyIsEnumerable,
       M = j.splice,
       R = k ? k.toStringTag : void 0,
-      I = Object.getOwnPropertySymbols,
-      F = $ ? $.isBuffer : void 0,
+      F = Object.getOwnPropertySymbols,
+      I = $ ? $.isBuffer : void 0,
       B =
         ((S = Object.keys),
         (x = Object),
@@ -1607,7 +1607,7 @@
         }
         return n.set(t, e), (this.size = n.size), this
       })
-    var yt = I
+    var yt = F
         ? function(t) {
             return null == t
               ? []
@@ -1622,7 +1622,7 @@
                     e(o, n, t) && (s[r++] = o)
                   }
                   return s
-                })(I(t), function(e) {
+                })(F(t), function(e) {
                   return U.call(t, e)
                 }))
           }
@@ -1688,7 +1688,7 @@
           },
       jt = Array.isArray
     var Pt =
-      F ||
+      I ||
       function() {
         return !1
       }
@@ -1747,11 +1747,6 @@
     )
     return new G(n, J)
   })`:host {\n  --st-default-spacing: 4px;\n}\nha-card {\n  -webkit-font-smoothing: var(--paper-font-body1_-_-webkit-font-smoothing);\n  font-size: var(--paper-font-body1_-_font-size);\n  font-weight: var(--paper-font-body1_-_font-weight);\n  line-height: var(--paper-font-body1_-_line-height);\n\n  padding-bottom: calc(var(--st-default-spacing) * 2);\n\n  padding-bottom: calc(var(--st-spacing, var(--st-default-spacing)) * 2);\n}\n\nha-card.no-header {\n  padding: calc(var(--st-default-spacing) * 4) 0;\n  padding: calc(var(--st-spacing, var(--st-default-spacing)) * 4) 0;\n}\n\n.not-found {\n  flex: 1;\n  background-color: yellow;\n  padding: calc(var(--st-default-spacing) * 4);\n  padding: calc(var(--st-spacing, var(--st-default-spacing)) * 4);\n}\n\n.body {\n  display: grid;\n  grid-auto-flow: column;\n  grid-auto-columns: 1fr;\n  align-items: center;\n  justify-items: center;\n  place-items: center;\n  padding: 0 calc(var(--st-default-spacing) * 4);\n  padding: 0 calc(var(--st-spacing, var(--st-default-spacing)) * 4);\n  padding-bottom: calc(var(--st-default-spacing) * 2);\n  padding-bottom: calc(var(--st-spacing, var(--st-default-spacing)) * 2);\n}\n.main {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n\n.sensors {\n  display: grid;\n  grid: auto-flow / 1fr 2fr;\n  grid-gap: var(--st-default-spacing);\n  grid-gap: var(--st-spacing, var(--st-default-spacing));\n  font-size: 16px;\n  font-size: var(\n    --st-font-size-sensors,\n    var(--paper-font-subhead_-_font-size, 16px)\n  );\n}\n.sensor-heading {\n  text-align: right;\n  font-weight: 300;\n  padding-right: 8px;\n  padding-bottom: 4px;\n  white-space: nowrap;\n}\n.sensors:empty {\n  display: none;\n}\nheader {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n\n  padding: calc(var(--st-default-spacing) * 6)\n    calc(var(--st-default-spacing) * 4)\n    calc(var(--st-default-spacing) * 4);\n\n  padding: calc(var(--st-spacing, var(--st-default-spacing)) * 6)\n    calc(var(--st-spacing, var(--st-default-spacing)) * 4)\n    calc(var(--st-spacing, var(--st-default-spacing)) * 4);\n}\n.header__icon {\n  margin-right: calc(var(--st-default-spacing) * 2);\n  margin-right: calc(var(--st-spacing, var(--st-default-spacing)) * 2);\n  color: #44739e;\n  color: var(--paper-item-icon-color, #44739e);\n}\n.header__title {\n  font-size: 24px;\n  font-size: var(--st-font-size-title, var(--ha-card-header-font-size, 24px));\n  line-height: 24px;\n  line-height: var(--st-font-size-title, var(--ha-card-header-font-size, 24px));\n  -webkit-font-smoothing: var(--paper-font-headline_-_-webkit-font-smoothing);\n  font-weight: normal;\n  margin: 0;\n  align-self: left;\n}\n.current-wrapper {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center\n}\n.current-wrapper.row {\n    flex-direction: row-reverse;\n  }\n.current--value-wrapper {\n  display: flex;\n  align-items: center;\n}\n.current--value {\n  margin: 0;\n  font-weight: 400;\n  line-height: var(--paper-font-display2_-_font-size);\n  line-height: var(--st-font-size-l, var(--paper-font-display2_-_font-size));\n  font-size: var(--paper-font-display2_-_font-size);\n  font-size: var(--st-font-size-l, var(--paper-font-display2_-_font-size))\n}\n@media (min-width: 768px) {\n.current--value {\n    font-size: var(--paper-font-display3_-_font-size);\n    font-size: var(--st-font-size-xl, var(--paper-font-display3_-_font-size));\n    line-height: var(--paper-font-display3_-_font-size);\n    line-height: var(--st-font-size-xl, var(--paper-font-display3_-_font-size))\n}\n  }\n.current--value.updating {\n    color: var(--google-red-500);\n  }\n.current--unit {\n  font-size: var(--paper-font-title_-_font-size);\n  font-size: var(--st-font-size-m, var(--paper-font-title_-_font-size));\n}\n.thermostat-trigger {\n  padding: 0px;\n}\n.clickable {\n  cursor: pointer;\n}\n.modes {\n  display: grid;\n  grid-template-columns: auto;\n  grid-auto-flow: column;\n  grid-gap: 2px;\n  margin-top: calc(var(--st-default-spacing) * 2);\n  margin-top: calc(var(--st-spacing, var(--st-default-spacing)) * 2);\n  padding: var(--st-default-spacing);\n  padding: var(--st-spacing, var(--st-default-spacing))\n}\n.modes.heading {\n    grid-template-columns: -webkit-min-content;\n    grid-template-columns: min-content;\n  }\n.mode-title {\n  padding: 0 16px;\n  align-self: center;\n  justify-self: center;\n  place-self: center;\n  font-size: 16px;\n  font-size: var(\n    --st-font-size-sensors,\n    var(--paper-font-subhead_-_font-size, 16px)\n  );\n  font-weight: 300;\n  white-space: nowrap;\n}\n.mode-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  text-align: center;\n  justify-content: center;\n  min-height: 24px;\n  padding: var(--st-default-spacing) 0;\n  padding: var(--st-spacing, var(--st-default-spacing)) 0;\n  background: var(--secondary-background-color);\n  background: var(--st-mode-background, var(--secondary-background-color));\n  color: var(--secondary-text-color);\n  cursor: pointer;\n  border-radius: var(--st-default-spacing);\n  border-radius: var(--st-spacing, var(--st-default-spacing))\n}\n.mode-item:hover {\n    color: var(--primary-text-color);\n    color: var(--st-mode-active-color, var(--primary-text-color));\n  }\n.mode-item.active,\n  .mode-item.active:hover {\n    background: var(--primary-color);\n    background: var(--st-mode-active-background, var(--primary-color));\n    color: var(--text-primary-color);\n    color: var(--st-mode-active-color, var(--text-primary-color));\n  }\n.mode-icon {\n  --iron-icon-width: 24px;\n  --iron-icon-height: 24px;\n  display: block;\n}\n`
-  function at(t, { decimals: e = 1, fallback: n = 'N/A' } = {}) {
-    return null === t || '' === t || ['boolean', 'undefined'].includes(typeof t)
-      ? n
-      : Number(t).toFixed(e)
-  }
   !(function(t, e) {
     void 0 === e && (e = {})
     var n = e.insertAt
@@ -1770,22 +1765,22 @@
   !(function(t) {
     console.info('%cwater-heater-card: ' + t, 'font-weight: bold')
   })('0.0.1')
-  const ct = ['entity', 'sensors', '_values', '_updatingValues', 'modes'],
-    lt = [],
-    ut = ['hvac', 'preset'],
-    dt = 'hass:chevron-up',
-    ht = 'hass:chevron-down',
-    pt = 'mdi:plus',
-    ft = 'mdi:minus',
-    _t = { off: 'hass:power', auto: 'hass:autorenew', heat: 'hass:fire' },
-    gt = {
+  const at = ['entity', 'sensors', '_values', '_updatingValues', 'modes'],
+    ct = [],
+    lt = ['hvac', 'preset'],
+    ut = 'hass:chevron-up',
+    dt = 'hass:chevron-down',
+    ht = 'mdi:plus',
+    pt = 'mdi:minus',
+    ft = { off: 'hass:power', auto: 'hass:autorenew', heat: 'hass:fire' },
+    _t = {
       off: 'mdi:radiator-off',
       idle: 'mdi:radiator-disabled',
       heating: 'mdi:radiator',
       auto: 'mdi:radiator',
     },
-    mt = { temperature: !1, state: !1 }
-  function yt(t, e, n = {}) {
+    gt = { temperature: !1, state: !1 }
+  function mt(t, e, n = {}) {
     return e[t + '_modes']
       .filter(t =>
         (function(t, e) {
@@ -1797,10 +1792,10 @@
       )
       .map(t => {
         const { include: e, ...i } = 'object' == typeof n[t] ? n[t] : {}
-        return { icon: _t[t], value: t, name: t, ...i }
+        return { icon: ft[t], value: t, name: t, ...i }
       })
   }
-  class vt extends Y {
+  class yt extends Y {
     static get styles() {
       return ot
     }
@@ -1835,15 +1830,15 @@
         (this.entity = null),
         (this.icon = null),
         (this.sensors = []),
-        (this._stepSize = 0.5),
+        (this._stepSize = 1),
         (this._values = {}),
         (this._updatingValues = !1),
-        (this._hide = mt),
+        (this._hide = gt),
         (this.modeOptions = { names: !0, icons: !0, headings: !0 })
     }
     setConfig(t) {
       if (!t.entity) throw new Error('You need to define an entity')
-      this.config = { decimals: 1, ...t }
+      this.config = { decimals: 0, ...t }
     }
     set hass(t) {
       const e = t.states[this.config.entity]
@@ -1867,8 +1862,8 @@
         this._updatingValues && st(i, this._values)
           ? (this._updatingValues = !1)
           : this._updatingValues || (this._values = i)
-      const r = t => lt.includes(t) && n[t + '_modes'],
-        s = t => t.filter(r).map(t => ({ type: t, list: yt(t, n, {}) }))
+      const r = t => ct.includes(t) && n[t + '_modes'],
+        s = t => t.filter(r).map(t => ({ type: t, list: mt(t, n, {}) }))
       let o = []
       if (!1 === this.config.control) o = []
       else if (Array.isArray(this.config.control)) o = s(this.config.control)
@@ -1885,10 +1880,10 @@
                 .map(([t, { _name: e, ...i }]) => ({
                   type: t,
                   name: e,
-                  list: yt(t, n, i),
+                  list: mt(t, n, i),
                 }))
-            : s(ut)
-      } else o = s(ut)
+            : s(lt)
+      } else o = s(lt)
       ;(this.modes = o.map(t => {
         if ('water_heater' === t.type) {
           const n = []
@@ -1905,7 +1900,7 @@
       })),
         void 0 !== this.config.icon
           ? (this.icon = this.config.icon)
-          : (this.icon = gt),
+          : (this.icon = _t),
         this.config.step_size && (this._stepSize = this.config.step_size),
         this.config.hide &&
           (this._hide = { ...this._hide, ...this.config.hide }),
@@ -1934,7 +1929,7 @@
           ))
     }
     shouldUpdate(t) {
-      return ct.some(e => t.has(e))
+      return at.some(e => t.has(e))
     }
     localize(t, e = '') {
       const n = this._hass.selectedLanguage || this._hass.language,
@@ -1961,20 +1956,15 @@
             min_temp: c = null,
             max_temp: l = null,
             hvac_action: u,
-            current_temperature: d,
+            temperature: d,
             ...h
           },
         } = s,
         p = this._hass.config.unit_system.temperature,
         f = [
-          this.renderInfoItem(e.temperature, `${at(d, r)}${p}`, {
-            heading:
-              (this.config.label && this.config.label.temperature) ||
-              'Temperature',
-          }),
           this.renderInfoItem(
             e.state,
-            this.localize(u, 'state_attributes.water_heater.hvac_action.'),
+            this.localize(u, 'state_attributes.water_heater.operation_list.'),
             {
               heading:
                 (this.config.label && this.config.label.state) || 'State',
@@ -1990,7 +1980,38 @@
         m = [!this.name && 'no-header', u].filter(t => !!t)
       return V`<ha-card class="${m.join(
         ' '
-      )}">${this.renderHeader()}<section class="body"><div class="sensors">${f}</div>${Object.entries(n).map(([t, e]) => V`<div class="main"><div class="current-wrapper ${_}"><ha-icon-button ?disabled="${l && e >= l}" class="thermostat-trigger" icon="${g ? pt : dt}" @click="${() => this.setTemperature(this._stepSize, t)}"></ha-icon-button><div @click="${() => this.openEntityPopover()}" class="current--value-wrapper"><h3 class="current--value ${i ? 'updating' : ''}">${at(e, r)}</h3><span class="current--unit">${p}</span></div><ha-icon-button ?disabled="${c && e <= c}" class="thermostat-trigger" icon="${g ? ft : ht}" @click="${() => this.setTemperature(-this._stepSize, t)}"></ha-icon-button></div></div>`)}</section>${this.modes.map(t => this.renderModeType(t))}</ha-card>`
+      )}">${this.renderHeader()}<section class="body"><div class="sensors">${f}</div>${Object.entries(
+        n
+      ).map(
+        ([t, e]) =>
+          V`<div class="main"><div class="current-wrapper ${_}"><ha-icon-button ?disabled="${l &&
+            e >= l}" class="thermostat-trigger" icon="${
+            g ? ht : ut
+          }" @click="${() =>
+            this.setTemperature(
+              this._stepSize,
+              t
+            )}"></ha-icon-button><div @click="${() =>
+            this.openEntityPopover()}" class="current--value-wrapper"><h3 class="current--value ${
+            i ? 'updating' : ''
+          }">${(function(t, { decimals: e = 1, fallback: n = 'N/A' } = {}) {
+            return null === t ||
+              '' === t ||
+              ['boolean', 'undefined'].includes(typeof t)
+              ? n
+              : Number(t).toFixed(e)
+          })(
+            e,
+            r
+          )}</h3><span class="current--unit">${p}</span></div><ha-icon-button ?disabled="${c &&
+            e <= c}" class="thermostat-trigger" icon="${
+            g ? pt : dt
+          }" @click="${() =>
+            this.setTemperature(
+              -this._stepSize,
+              t
+            )}"></ha-icon-button></div></div>`
+      )}</section>${this.modes.map(t => this.renderModeType(t))}</ha-card>`
     }
     renderHeader() {
       if (!1 === this.name) return ''
@@ -2074,5 +2095,5 @@
       return 3
     }
   }
-  return window.customElements.define('water-heater-card', vt), vt
+  return window.customElements.define('water-heater-card', yt), yt
 })
