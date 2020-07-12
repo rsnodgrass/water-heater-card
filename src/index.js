@@ -53,18 +53,13 @@ const ICONS = {
 const modeIcons = {
   off: 'hass:power',
   auto: 'hass:autorenew',
-  heat: 'hass:fire',
-  heat_cool: 'hass:autorenew',
-  cool: 'hass:snowflake',
-  fan_only: 'hass:fan',
-  dry: 'hass:water-percent',
+  heat: 'hass:fire'
 }
 
 const STATE_ICONS = {
   off: 'mdi:radiator-off',
   idle: 'mdi:radiator-disabled',
   heating: 'mdi:radiator',
-  cool: 'mdi:snowflake',
   auto: 'mdi:radiator',
 }
 
