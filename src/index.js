@@ -16,8 +16,8 @@ printVersion(version)
 const DUAL = 'dual'
 const SINGLE = 'single'
 const DEBOUNCE_TIMEOUT = 1000
-const STEP_SIZE = 0.5
-const DECIMALS = 1
+const STEP_SIZE = 1.0
+const DECIMALS = 0
 const UPDATE_PROPS = [
   'entity',
   'sensors',
@@ -357,6 +357,7 @@ class WaterHeaterCard extends LitElement {
     const unit = this._hass.config.unit_system.temperature
 
     const sensorHtml = [
+      /*    // DISABLE temperature for now, since currently there isn't separate temp field from the set point
       this.renderInfoItem(
         _hide.temperature,
         `${formatNumber(current, config)}${unit}`,
@@ -365,10 +366,10 @@ class WaterHeaterCard extends LitElement {
             (this.config.label && this.config.label.temperature) ||
             'Temperature',
         }
-      ),
+      ), */
       this.renderInfoItem(
         _hide.state,
-        this.localize(action, 'state_attributes.water_heater.hvac_action.'),
+        this.localize(action, 'state_attributes.water_heater.operation_list.'),
         { heading: (this.config.label && this.config.label.state) || 'State' }
       ),
       sensors.map(({ name, icon, state, unit }) => {
