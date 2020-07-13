@@ -1949,7 +1949,7 @@
       } = this
     ) {
       if (!s)
-        return V`<ha-card class="not-found">Entity not available: <strong class="name">${r.entity}</strong></ha-card>`
+        return V`<ha-card class="not-found">water_heater entity not available: <strong class="name">${r.entity}</strong></ha-card>`
       const {
           state: a,
           attributes: {
