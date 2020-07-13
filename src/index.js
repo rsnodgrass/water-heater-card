@@ -29,12 +29,11 @@ const UPDATE_PROPS = [
 //const MODE_TYPES = ['hvac', 'preset']
 const MODE_TYPES = []
 
-// Sorted list of water heater modes (see also attibute.operation_list)
+// Sorted list of water heater modes (see also attribute.operation_list)
 const WATER_HEATER_MODES = [
   'off',
   'eco',
   'electric',
-  'gas',
   'performance',
   'high_demand',
   'heat_pump',
@@ -368,11 +367,13 @@ class WaterHeaterCard extends LitElement {
             'Temperature',
         }
       ), */
+
       this.renderInfoItem(
         _hide.state,
         this.localize(action, 'state_attributes.water_heater.operation_list.'),
         { heading: (this.config.label && this.config.label.state) || 'State' }
       ),
+
       sensors.map(({ name, icon, state, unit }) => {
         return (
           state &&
