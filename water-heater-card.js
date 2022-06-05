@@ -1985,13 +1985,10 @@
       ).map(
         ([t, e]) =>
           V`<div class="main"><div class="current-wrapper ${_}"><ha-icon-button ?disabled="${l &&
-            e >= l}" class="thermostat-trigger" icon="${
+            e >= l}" class="thermostat-trigger" @click="${() =>
+            this.setTemperature(this._stepSize, t)}"><ha-icon icon="${
             g ? ht : ut
-          }" @click="${() =>
-            this.setTemperature(
-              this._stepSize,
-              t
-            )}"></ha-icon-button><div @click="${() =>
+          }"></ha-icon></ha-icon-button><div @click="${() =>
             this.openEntityPopover()}" class="current--value-wrapper"><h3 class="current--value ${
             i ? 'updating' : ''
           }">${(function(t, { decimals: e = 1, fallback: n = 'N/A' } = {}) {
@@ -2004,13 +2001,10 @@
             e,
             r
           )}</h3><span class="current--unit">${p}</span></div><ha-icon-button ?disabled="${c &&
-            e <= c}" class="thermostat-trigger" icon="${
+            e <= c}" class="thermostat-trigger" @click="${() =>
+            this.setTemperature(-this._stepSize, t)}"><ha-icon icon="${
             g ? pt : dt
-          }" @click="${() =>
-            this.setTemperature(
-              -this._stepSize,
-              t
-            )}"></ha-icon-button></div></div>`
+          }"></ha-icon></ha-icon-button></div></div>`
       )}</section>${this.modes.map(t => this.renderModeType(t))}</ha-card>`
     }
     renderHeader() {
