@@ -1,7 +1,7 @@
 # Water Heater Card for Lovelace
 
 ![beta_badge](https://img.shields.io/badge/maturity-Beta-yellow.png)
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/hacs/integration)
 
 A water heater card for Home Assistant's Lovelace UI, directly based on the [simple-thermostat](https://github.com/nervetattoo/simple-thermostat/) card. Hopefully this, or a similar card, will get integrated into Home Assistant as one of the included cards.
 
