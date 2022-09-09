@@ -401,9 +401,9 @@ class WaterHeaterCard extends LitElement {
                   <ha-icon-button
                     ?disabled=${maxTemp && value >= maxTemp}
                     class="thermostat-trigger"
-                    icon=${row ? ICONS.PLUS : ICONS.UP}
                     @click="${() => this.setTemperature(this._stepSize, field)}"
                   >
+                    <ha-icon icon="${row ? ICONS.PLUS : ICONS.UP}"></ha-icon>
                   </ha-icon-button>
 
                   <div
@@ -422,10 +422,10 @@ class WaterHeaterCard extends LitElement {
                   <ha-icon-button
                     ?disabled=${minTemp && value <= minTemp}
                     class="thermostat-trigger"
-                    icon=${row ? ICONS.MINUS : ICONS.DOWN}
                     @click="${() =>
                       this.setTemperature(-this._stepSize, field)}"
                   >
+                    <ha-icon icon="${row ? ICONS.MINUS : ICONS.DOWN}"></ha-icon>
                   </ha-icon-button>
                 </div>
               </div>
